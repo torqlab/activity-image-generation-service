@@ -1,6 +1,27 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+Please, document here only changes visible to the client app.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.1] - 2026-03-11
+
+### [47 Add Origin/CORS Validation and Global Exception Handling](https://github.com/torqlab/activity-image-generation-service/issues/47)
+
+### Added
+- Origin/CORS validation system with configurable allowed origins via `ALLOWED_ORIGINS` environment variable
+- `OriginGuard` for validating incoming request origins with development mode fallback
+- `OriginService` for managing allowed origins configuration
+- Global exception filter for consistent error response formatting across all endpoints
+- Husky pre-push hook for code quality checks (linting, formatting, tests)
+- Support for Origin and Referer header validation
+
+### Changed
+- Enhanced CORS configuration with dynamic origin validation using `corsOriginCallback`
+- Improved error handling with centralized exception filtering
+- Added `.nvmrc`, `.prettierignore`, and enhanced ESLint configuration for improved development workflow
 
 ## [1.0.0] - 2026-03-11
 
