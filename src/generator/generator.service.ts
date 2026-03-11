@@ -8,15 +8,28 @@ import {
 import { ForbiddenContentService } from '../forbidden-content';
 import { GeneratorResponseDto } from './dto';
 
+/**
+ * Service for generating AI activity images from text prompts.
+ */
 @Injectable()
 export class GeneratorService {
   private readonly logger = new Logger(GeneratorService.name);
 
+  /**
+   * Creates an instance of GeneratorService.
+   * @param {ConfigService} configService - The configuration service for accessing environment variables
+   * @param {ForbiddenContentService} forbiddenContentService - Service to validate prompt content for forbidden words
+   */
   constructor(
     private configService: ConfigService,
     private forbiddenContentService: ForbiddenContentService,
   ) {}
 
+  /**
+   * Generates an AI image based on the provided prompt text.
+   * @param {string} prompt - The text prompt for image generation
+   * @returns {{Promise<GeneratorResponseDto>}} The generated image and metadata
+   */
   async generateImage(prompt: string): Promise<GeneratorResponseDto> {
     if (this.forbiddenContentService.check(prompt)) {
       throw new BadRequestException('Prompt contains forbidden content');

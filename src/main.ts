@@ -6,6 +6,9 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { GlobalExceptionFilter } from './filters';
 
+/**
+ * Initializes and starts the NestJS application.
+ */
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
@@ -46,10 +49,10 @@ const bootstrap = async (): Promise<void> => {
 
   await app.listen(port, '0.0.0.0');
 
-  console.log(`Application is running on: http://localhost:${port}`);
-  console.log(`Environment: ${nodeEnv}`);
-  console.log(`API Docs: http://localhost:${port}/docs`);
-  console.log(`CORS Origin: ${origin}`);
+  console.info(`Application is running on: http://localhost:${port}`);
+  console.info(`Environment: ${nodeEnv}`);
+  console.info(`API Docs: http://localhost:${port}/docs`);
+  console.info(`CORS Origin: ${origin}`);
 };
 
 bootstrap().catch((error) => {

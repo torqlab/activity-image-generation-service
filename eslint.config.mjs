@@ -9,6 +9,7 @@ export default defineConfig([
   tseslint.configs.recommended,
   {
     files: ['**/*.{ts,tsx}'],
+    ignores: ['**/*.spec.ts', '**/*.test.ts'],
     languageOptions: {
       parserOptions: {
         project: ['./tsconfig.json'],
@@ -101,7 +102,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['**/*.test.ts'],
+    files: ['**/*.test.ts', '**/*.spec.ts'],
     rules: {
       'jsdoc/require-jsdoc': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
