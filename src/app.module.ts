@@ -8,6 +8,9 @@ import { GeneratorModule } from './generator';
 import { PromptModule } from './prompt';
 import { ForbiddenContentModule } from './forbidden-content';
 
+/**
+ * Root application module that imports and configures all feature modules.
+ */
 @Module({
   imports: [
     ConfigModule.forRoot({

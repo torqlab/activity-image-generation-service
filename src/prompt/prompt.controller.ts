@@ -5,11 +5,23 @@ import { Throttle } from '@nestjs/throttler';
 import { PromptService } from './prompt.service';
 import { PromptQueryDto, PromptResponseDto } from './dto';
 
+/**
+ * Controller for prompt generation endpoints.
+ */
 @ApiTags('Prompt')
 @Controller('prompt')
 export class PromptController {
+  /**
+   * Creates an instance of PromptController.
+   * @param {PromptService} promptService - The prompt service instance
+   */
   constructor(private readonly promptService: PromptService) {}
 
+  /**
+   * Endpoint to generate an image prompt from Strava activity signals.
+   * @param {PromptQueryDto} query - The query parameters containing base64-encoded signals
+   * @returns {{PromptResponseDto}} The generated prompt response
+   */
   @Get()
   @ApiOperation({
     summary: 'Generate image prompt from activity signals',

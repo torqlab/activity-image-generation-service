@@ -1,5 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 
+/**
+ * DTO for prompt generation response data.
+ */
 export class PromptResponseDto {
   @ApiProperty({
     description: 'Generated image generation prompt',

@@ -6,6 +6,9 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { GlobalExceptionFilter } from './filters';
 
+/**
+ * Initializes and starts the NestJS application.
+ */
 const bootstrap = async (): Promise<void> => {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
@@ -20,7 +23,7 @@ const bootstrap = async (): Promise<void> => {
       .setVersion('1.0')
       .addTag('Generator', 'Image generation endpoints')
       .addTag('Prompt', 'Prompt generation endpoints')
-      .build(),
+      .build()
   );
 
   app.useGlobalFilters(new GlobalExceptionFilter());
@@ -32,9 +35,9 @@ const bootstrap = async (): Promise<void> => {
       transformOptions: {
         enableImplicitConversion: true,
       },
-    }),
+    })
   );
-  app.setGlobalPrefix('api/v1');  
+  app.setGlobalPrefix('api/v1');
   app.enableCors({
     credentials: true,
     methods: ['GET', 'OPTIONS'],
@@ -46,10 +49,10 @@ const bootstrap = async (): Promise<void> => {
 
   await app.listen(port, '0.0.0.0');
 
-  console.log(`Application is running on: http://localhost:${port}`);
-  console.log(`Environment: ${nodeEnv}`);
-  console.log(`API Docs: http://localhost:${port}/docs`);
-  console.log(`CORS Origin: ${origin}`);
+  console.info(`Application is running on: http://localhost:${port}`);
+  console.info(`Environment: ${nodeEnv}`);
+  console.info(`API Docs: http://localhost:${port}/docs`);
+  console.info(`CORS Origin: ${origin}`);
 };
 
 bootstrap().catch((error) => {
