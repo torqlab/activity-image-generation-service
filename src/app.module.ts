@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { ThrottlerModule } from '@nestjs/throttler';
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GeneratorModule } from './generator/generator.module';
-import { PromptModule } from './prompt/prompt.module';
-import { ForbiddenContentModule } from './forbidden-content/forbidden-content.module';
+import { GeneratorModule } from './generator';
+import { PromptModule } from './prompt';
+import { ForbiddenContentModule } from './forbidden-content';
 
 @Module({
   imports: [

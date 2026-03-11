@@ -1,11 +1,14 @@
-import { Response } from 'express';
+import { Request, Response } from 'express';
 import {
   ExceptionFilter,
   Catch,
   ArgumentsHost,
   HttpException,
   Logger,
+  NotFoundException,
 } from '@nestjs/common';
+
+const IGNORED_PATHS = ['/robots.txt', '/favicon.ico'];
 
 interface ErrorResponse {
   error: string;
@@ -50,10 +53,17 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       };
     }
 
-    this.logger.error(
-      `${errorResponse.error}: ${errorResponse.message}`,
-      exception instanceof Error ? exception.stack : '',
-    );
+    const request = ctx.getRequest<Request>();
+    const isIgnoredPath =
+      exception instanceof NotFoundException &&
+      IGNORED_PATHS.some((p) => request.path.startsWith(p));
+
+    if (!isIgnoredPath) {
+      this.logger.error(
+        `${errorResponse.error}: ${errorResponse.message}`,
+        exception instanceof Error ? exception.stack : '',
+      );
+    }
 
     response.status(status).json(errorResponse);
   }
