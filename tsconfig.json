@@ -3,12 +3,10 @@
     "module": "esnext",
     "target": "ES2020",
     "lib": ["ES2020"],
-    "moduleResolution": "node",
-    "ignoreDeprecations": "6.0",
+    "moduleResolution": "bundler",
     "rootDir": "src",
-    "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
     "outDir": "./dist",
     "allowSyntheticDefaultImports": true,
