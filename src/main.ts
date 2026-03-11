@@ -58,7 +58,7 @@ const bootstrap = async (): Promise<void> => {
   const originService = app.get(OriginService);
   moduleConfig.originService = originService;
   moduleConfig.nodeEnv = configService.get<string>('NODE_ENV') || 'development';
-  
+
   const nodeEnv = moduleConfig.nodeEnv;
   const port = configService.get<number>('PORT') || 3002;
   const allowedOrigins = originService.getAllowedOrigins();
@@ -99,7 +99,9 @@ const bootstrap = async (): Promise<void> => {
   console.info(`Application is running on: http://localhost:${port}`);
   console.info(`Environment: ${nodeEnv}`);
   console.info(`API Docs: http://localhost:${port}/docs`);
-  console.info(`Allowed origins: ${allowedOrigins.length > 0 ? allowedOrigins.join(', ') : 'none'}`);
+  console.info(
+    `Allowed origins: ${allowedOrigins.length > 0 ? allowedOrigins.join(', ') : 'none'}`
+  );
 };
 
 bootstrap().catch((error) => {

@@ -18,7 +18,7 @@ export class OriginGuard implements CanActivate {
    */
   constructor(
     private readonly originService: OriginService,
-    private readonly configService: ConfigService,
+    private readonly configService: ConfigService
   ) {}
 
   /**
@@ -41,7 +41,7 @@ export class OriginGuard implements CanActivate {
 
     if (!isAllowed) {
       throw new ForbiddenException(
-        `Origin '${requestOrigin}' is not allowed to access this resource`,
+        `Origin '${requestOrigin}' is not allowed to access this resource`
       );
     }
 
