@@ -1,6 +1,6 @@
 {
   "name": "@torq/activity-image-generation-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "REST API service for AI-based activity image generation.",
   "private": true,
   "main": "dist/main.js",
