@@ -48,7 +48,7 @@ export class PromptService {
     try {
       const prompt = getActivityImageGenerationPrompt(
         signals,
-        this.forbiddenContentService.check.bind(this.forbiddenContentService),
+        this.forbiddenContentService.check.bind(this.forbiddenContentService)
       );
 
       return { prompt };

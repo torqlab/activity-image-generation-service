@@ -23,7 +23,7 @@ const bootstrap = async (): Promise<void> => {
       .setVersion('1.0')
       .addTag('Generator', 'Image generation endpoints')
       .addTag('Prompt', 'Prompt generation endpoints')
-      .build(),
+      .build()
   );
 
   app.useGlobalFilters(new GlobalExceptionFilter());
@@ -35,9 +35,9 @@ const bootstrap = async (): Promise<void> => {
       transformOptions: {
         enableImplicitConversion: true,
       },
-    }),
+    })
   );
-  app.setGlobalPrefix('api/v1');  
+  app.setGlobalPrefix('api/v1');
   app.enableCors({
     credentials: true,
     methods: ['GET', 'OPTIONS'],

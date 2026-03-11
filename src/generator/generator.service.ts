@@ -1,9 +1,7 @@
 import { Injectable, BadRequestException, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import generateActivityImage from '@torqlab/generate-activity-image';
-import {
-  ACTIVITY_IMAGE_GENERATION_PROMPT_DEFAULT,
-} from '@torqlab/get-activity-image-generation-prompt';
+import { ACTIVITY_IMAGE_GENERATION_PROMPT_DEFAULT } from '@torqlab/get-activity-image-generation-prompt';
 
 import { ForbiddenContentService } from '../forbidden-content';
 import { GeneratorResponseDto } from './dto';
@@ -22,7 +20,7 @@ export class GeneratorService {
    */
   constructor(
     private configService: ConfigService,
-    private forbiddenContentService: ForbiddenContentService,
+    private forbiddenContentService: ForbiddenContentService
   ) {}
 
   /**

@@ -34,9 +34,7 @@ export class GeneratorController {
     description: 'The text prompt for image generation',
   })
   @Throttle({ default: { limit: 10, ttl: 60000 } })
-  async generateImage(
-    @Query() query: GeneratorQueryDto,
-  ): Promise<GeneratorResponseDto> {
+  async generateImage(@Query() query: GeneratorQueryDto): Promise<GeneratorResponseDto> {
     if (query.prompt) {
       return this.generatorService.generateImage(query.prompt);
     } else {

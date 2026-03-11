@@ -88,7 +88,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     if (!isIgnoredPath) {
       this.logger.error(
         `${errorResponse.error}: ${errorResponse.message}`,
-        exception instanceof Error ? exception.stack : '',
+        exception instanceof Error ? exception.stack : ''
       );
     }
 
