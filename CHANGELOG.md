@@ -6,6 +6,17 @@ Please, document here only changes visible to the client app.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-12
+
+### [47 Migrate Forbidden Content Check to External Package](https://github.com/torqlab/activity-image-generation-service/issues/47)
+
+### Changed
+- Migrated from local `check-forbidden-content` module to external `@torqlab/check-forbidden-content` package
+- `ForbiddenContentService` now delegates to the external package implementation
+
+### Removed
+- Local `check-forbidden-content` module implementation files (constants, implementation, tests, and index)
+
 ## [1.0.1] - 2026-03-11
 
 ### [47 Add Origin/CORS Validation and Global Exception Handling](https://github.com/torqlab/activity-image-generation-service/issues/47)
