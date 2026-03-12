@@ -1,6 +1,6 @@
 {
   "name": "@torq/activity-image-generation-service",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "REST API service for AI-based activity image generation.",
   "private": true,
   "main": "dist/main.js",
@@ -28,6 +28,7 @@
     "@nestjs/platform-express": "^10.3.0",
     "@nestjs/swagger": "^7.2.0",
     "@nestjs/throttler": "^5.1.0",
+    "@torqlab/check-forbidden-content": "^1.0.4",
     "@torqlab/generate-activity-image": "^1.0.3",
     "@torqlab/get-activity-image-generation-prompt": "^1.0.1",
     "@torqlab/get-strava-activity-signals": "^1.0.1",

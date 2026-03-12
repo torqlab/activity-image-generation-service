@@ -11,6 +11,7 @@
         "@nestjs/platform-express": "^10.3.0",
         "@nestjs/swagger": "^7.2.0",
         "@nestjs/throttler": "^5.1.0",
+        "@torqlab/check-forbidden-content": "^1.0.4",
         "@torqlab/generate-activity-image": "^1.0.3",
         "@torqlab/get-activity-image-generation-prompt": "^1.0.1",
         "@torqlab/get-strava-activity-signals": "^1.0.1",
@@ -244,6 +245,8 @@
     "@tokenizer/inflate": ["@tokenizer/inflate@0.2.7", "", { "dependencies": { "debug": "^4.4.0", "fflate": "^0.8.2", "token-types": "^6.0.0" } }, "sha512-MADQgmZT1eKjp06jpI2yozxaU9uVs4GzzgSL+uEq7bVcJ9V1ZXQkeGNql1fsSI0gMy1vhvNTNbUqrx+pZfJVmg=="],
 
     "@tokenizer/token": ["@tokenizer/token@0.3.0", "", {}, "sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A=="],
+
+    "@torqlab/check-forbidden-content": ["@torqlab/check-forbidden-content@1.0.4", "", {}, "sha512-WeOl3xM7zfCjIcA/FUlRI9DQbgadWnkew9SDafIQ09x+gsQXJXlRlEjYfuJdvmCd0IE36xJzGG2vrR8TTcCpdg=="],
 
     "@torqlab/generate-activity-image": ["@torqlab/generate-activity-image@1.0.3", "", {}, "sha512-vRRed6mG89FkpkU65TFT+oEnJ9Em9u7qrHwN+Snd0xDYibixq7czYUw/XLF7kLd8Jfe0K+XdIrisEYn6jzyx2g=="],
 
